@@ -16,7 +16,6 @@ screen.onkey(snake.up,"Up")
 screen.onkey(snake.down,"Down")
 screen.onkey(snake.left,"Left")
 screen.onkey(snake.right,"Right")
-a=[1,2,3,4,5,6,7,8,9,10]
 game_running=True
 while game_running:
     screen.update()
