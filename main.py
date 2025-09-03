@@ -9,6 +9,7 @@ screen.bgcolor("black")
 screen.title("snake")
 screen.tracer(0)
 snake = Snake()
+snake.boundery()
 food = Food()
 score = ScoreCard()
 screen.listen()
@@ -26,7 +27,7 @@ while game_running:
         snake.extend()
         food.refresh()
         score.inc_score()
-    if snake.head.xcor()>290 or snake.head.xcor()<-290 or snake.head.ycor()>280 or snake.head.ycor() <-280:
+    if snake.head.xcor()>290 or snake.head.xcor()<-290 or snake.head.ycor()>290 or snake.head.ycor() <-290:
         score.game_over()
         game_running = False
 

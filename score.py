@@ -6,7 +6,7 @@ class ScoreCard(Turtle):
         self.color("white")
         self.hideturtle()
         self.penup()
-        self.goto(0,270)
+        self.goto(0,260)
         self.write(f"Score: {self.score}",align="center",font=("Arial",24,"normal"))
     def inc_score(self):
         self.score+=1
