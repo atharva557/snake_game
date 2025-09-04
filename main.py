@@ -18,6 +18,10 @@ screen.onkeypress(snake.down,"Down")
 screen.onkeypress(snake.left,"Left")
 screen.onkeypress(snake.right,"Right")
 game_running=True
+def exit():
+    global game_running
+    game_running=False
+screen.onkeypress(exit,"e")
 while game_running:
     screen.update()
     time.sleep(0.1)
@@ -28,14 +32,16 @@ while game_running:
         food.refresh()
         score.inc_score()
     if snake.head.xcor()>290 or snake.head.xcor()<-290 or snake.head.ycor()>290 or snake.head.ycor() <-290:
-        score.game_over()
-        game_running = False
+        score.reset()
+        snake.reset()
+        #game_running = False
 
     for seg in snake.segments:
         if seg == snake.head:
             continue
         elif snake.head.distance(seg)<10:
-            score.game_over()
-            game_running =False
+            score.reset()
+            snake.reset()
+            #game_running =False
 #screen.bye()
 screen.exitonclick()
